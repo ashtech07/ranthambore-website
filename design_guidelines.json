@@ -1,0 +1,119 @@
+{
+  "theme_and_archetype": {
+    "domain": "Wildlife Safari Booking",
+    "theme": "Hybrid (Light main, Dark footer/admin sidebar)",
+    "archetype": "Archetype 1 (Organic & Earthy) + Archetype 5 (Luxury)"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Playfair Display, serif",
+      "body": "DM Sans, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tight leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl leading-snug",
+      "h4": "text-lg sm:text-xl",
+      "body_large": "text-lg leading-relaxed",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm",
+      "accent": "text-sm tracking-[0.2em] uppercase"
+    },
+    "rules": {
+      "hero_headline": "text-white font-bold",
+      "italic_accent": "text-[var(--brand-amber)] italic",
+      "body_text": "text-[var(--text-body)]"
+    }
+  },
+  "colors": {
+    "css_variables": {
+      "--brand-amber": "#C8860A",
+      "--brand-forest": "#1A2B1F",
+      "--text-body": "#1C1C1C",
+      "--bg-offwhite": "#F9F5EE",
+      "--bg-charcoal": "#111111",
+      "--bg-white": "#FFFFFF",
+      "--tatkal-red": "#E63946",
+      "--admin-bg": "#F0EDE8",
+      "--price-header": "#000000",
+      "--table-row-alt": "#F5F5F5"
+    },
+    "usage": {
+      "primary_cta": "bg-[var(--brand-amber)] text-white font-bold",
+      "secondary_cta": "bg-transparent border border-white text-white",
+      "hero_overlay": "bg-[#C8860A]/40 mix-blend-multiply",
+      "nav_scroll": "bg-[var(--brand-forest)] text-white transition-colors duration-300",
+      "nav_transparent": "bg-transparent text-white transition-colors duration-300",
+      "tatkal_cta": "bg-[var(--tatkal-red)] text-white animate-pulse"
+    }
+  },
+  "spacing_and_layout": {
+    "generous_spacing": "py-24 px-6 md:px-12",
+    "section_gap": "gap-12 md:gap-24",
+    "card_padding": "p-8",
+    "border_radius": "rounded-none md:rounded-sm",
+    "container": "max-w-7xl mx-auto"
+  },
+  "component_patterns": {
+    "hero": "Relative container, full height (min-h-screen). Absolute image with amber overlay #C8860A at 40% opacity (bg-[#C8860A]/40). Center aligned massive Playfair heading. Amber italic subtext.",
+    "ticker": "Fixed top, bg-[#111111], white text, marquee animation (react-fast-marquee).",
+    "navigation": "Sticky/fixed below ticker. Transparent on top, becomes bg-[#1A2B1F] on scroll. Nav items DM Sans. Book Now CTA in bg-[#C8860A].",
+    "pricing_table": "Header black #000000 with white text. Rows alternate white and #F5F5F5.",
+    "tatkal_section": "Blinking red bg-[#E63946] CTA every 2 seconds. High urgency copy.",
+    "cards": "bg-[#F9F5EE]. Subtle hover lift (-translate-y-1) and shadow. Clean borders if any.",
+    "faq_accordion": "Clean borders, Playfair questions, DM Sans answers.",
+    "floating_whatsapp": "Fixed bottom right, green/amber icon, z-50.",
+    "admin_sidebar": "bg-[#1A2B1F], Playfair headings, DM sans links.",
+    "admin_cards": "White background, colored left border per stat type."
+  },
+  "media": {
+    "hero_tiger": "https://images.pexels.com/photos/15345428/pexels-photo-15345428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "safari_booking_hero": "https://images.pexels.com/photos/25785873/pexels-photo-25785873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "hotels_hero": "https://images.unsplash.com/photo-1780283574760-e8d7fd944da5",
+    "packages_hero": "https://images.unsplash.com/photo-1672490305147-2e791a7fbe0b",
+    "tatkal_jeep": "https://images.pexels.com/photos/21701085/pexels-photo-21701085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "zones": [
+      "https://images.unsplash.com/photo-1672490304777-5488ff663747",
+      "https://images.unsplash.com/photo-1672490305200-aa590b526c8c",
+      "https://images.unsplash.com/photo-1634831709344-d3e05b1a093a",
+      "https://images.unsplash.com/photo-1537616930345-1d330ad3e0a9",
+      "https://images.unsplash.com/photo-1719163343629-e56de8fc6209",
+      "https://images.unsplash.com/photo-1686648420191-3a4d35073fd6",
+      "https://images.pexels.com/photos/35972700/pexels-photo-35972700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1652885363231-b0cb27a13197",
+      "https://images.pexels.com/photos/17213816/pexels-photo-17213816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1599632740188-8a4f152a8342"
+    ],
+    "tourist_attractions": [
+      "https://images.pexels.com/photos/22303756/pexels-photo-22303756.jpeg",
+      "https://images.unsplash.com/photo-1725990076174-a3448eb86e76",
+      "https://images.unsplash.com/photo-1656828059237-add66db82a2b",
+      "https://images.unsplash.com/photo-1673429451243-3af566c5defc",
+      "https://images.unsplash.com/photo-1694366454450-7979697bab21",
+      "https://images.unsplash.com/photo-1673429451048-08db61259eac"
+    ],
+    "hotels": [
+      "https://images.unsplash.com/photo-1711707246899-cf0d1a5d0472",
+      "https://images.unsplash.com/photo-1774280954999-9758f11f3d41",
+      "https://images.unsplash.com/photo-1565214988145-8e826f79d8c2",
+      "https://images.unsplash.com/photo-1636484807510-bc2ffbaf3241",
+      "https://images.unsplash.com/photo-1673429451048-08db61259eac",
+      "https://images.unsplash.com/photo-1694366454450-7979697bab21",
+      "https://images.unsplash.com/photo-1780283574760-e8d7fd944da5",
+      "https://images.unsplash.com/photo-1711707246899-cf0d1a5d0472",
+      "https://images.unsplash.com/photo-1774280954999-9758f11f3d41",
+      "https://images.unsplash.com/photo-1636484807510-bc2ffbaf3241"
+    ],
+    "packages": [
+      "https://images.unsplash.com/photo-1589959116874-6216d692f81c",
+      "https://images.unsplash.com/photo-1672490305147-2e791a7fbe0b",
+      "https://images.unsplash.com/photo-1652885363231-b0cb27a13197",
+      "https://images.unsplash.com/photo-1780283574760-e8d7fd944da5",
+      "https://images.pexels.com/photos/15345428/pexels-photo-15345428.jpeg"
+    ]
+  },
+  "testing": {
+    "attributes": "All interactive and key informational elements MUST include a data-testid attribute. Examples: data-testid='book-safari-cta', data-testid='tatkal-cta', data-testid='hotel-card-1', data-testid='admin-login-submit'"
+  },
+  "instructions_to_main_agent": "Ensure the overall look matches a high-end wildlife magazine. Use Playfair Display for headers and DM Sans for body. Do not deviate to blue or generic templates. Utilize the defined css variables in tailwind config for custom colors. Implement the floating WhatsApp and top ticker. All images MUST be mapped as defined in this media block."
+}
