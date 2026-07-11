@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { api } from "@/lib/api";
+import { SEED_HOTELS } from "@/lib/seedDefaults";
 
 const EVENT = "rtc:hotels-updated";
 
@@ -9,9 +10,13 @@ export function useHotels() {
   const refresh = useCallback(async () => {
     try {
       const { data } = await api.get("/hotels");
-      setHotels(data || []);
+      // Fall back to the seeded snapshot only when the database has no
+      // hotels at all (e.g. a fresh deploy before the Admin Panel has been
+      // used). Once at least one hotel exists in the database, it always
+      // wins over the hardcoded defaults.
+      setHotels(data && data.length > 0 ? data : SEED_HOTELS);
     } catch {
-      setHotels([]);
+      setHotels(SEED_HOTELS);
     }
   }, []);
 

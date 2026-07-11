@@ -1,4 +1,5 @@
 // Static content + media for Ranthambore Safari Curator
+import { SEED_IMAGES } from "@/lib/seedDefaults";
 
 export const HERO_IMG = "https://images.pexels.com/photos/15345428/pexels-photo-15345428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600";
 export const SAFARI_HERO_IMG = "https://images.pexels.com/photos/25785873/pexels-photo-25785873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600";
@@ -40,16 +41,16 @@ export const ZONES = [
 ];
 
 export const ZONE_IMAGES = [
-  "https://images.unsplash.com/photo-1672490304777-5488ff663747?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1672490305200-aa590b526c8c?auto=format&fit=crop&w=800&q=80",
+  SEED_IMAGES.zone_1,
+  SEED_IMAGES.zone_2,
   "https://images.unsplash.com/photo-1634831709344-d3e05b1a093a?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1537616930345-1d330ad3e0a9?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1719163343629-e56de8fc6209?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1686648420191-3a4d35073fd6?auto=format&fit=crop&w=800&q=80",
   "https://images.pexels.com/photos/35972700/pexels-photo-35972700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=800",
-  "https://images.unsplash.com/photo-1652885363231-b0cb27a13197?auto=format&fit=crop&w=800&q=80",
-  "https://images.pexels.com/photos/17213816/pexels-photo-17213816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=800",
-  "https://images.unsplash.com/photo-1599632740188-8a4f152a8342?auto=format&fit=crop&w=800&q=80",
+  SEED_IMAGES.zone_8,
+  SEED_IMAGES.zone_9,
+  SEED_IMAGES.zone_10,
 ];
 
 export const HOW_IT_WORKS = [
@@ -59,10 +60,10 @@ export const HOW_IT_WORKS = [
 ];
 
 export const ATTRACTIONS = [
-  { name: "Ranthambore Fort", text: "A UNESCO-listed thousand-year hill fort with sweeping views over the dhok forest.", img: "https://images.pexels.com/photos/22303756/pexels-photo-22303756.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=900" },
+  { name: "Ranthambore Fort", text: "A UNESCO-listed thousand-year hill fort with sweeping views over the dhok forest.", img: SEED_IMAGES.attraction_fort },
   { name: "Jogi Mahal", text: "An ochre hunting pavilion on the edge of Padam Talao, once the maharaja's retreat.", img: "https://images.unsplash.com/photo-1725990076174-a3448eb86e76?auto=format&fit=crop&w=900&q=80" },
   { name: "Padam Talao Lake", text: "The park's largest lake where tigers cross at dusk and crocodiles bask along the banks.", img: "https://images.unsplash.com/photo-1656828059237-add66db82a2b?auto=format&fit=crop&w=900&q=80" },
-  { name: "Trinetra Ganesh Temple", text: "An eighth-century shrine inside the fort — India's oldest three-eyed Ganesha.", img: "https://images.unsplash.com/photo-1673429451243-3af566c5defc?auto=format&fit=crop&w=900&q=80" },
+  { name: "Trinetra Ganesh Temple", text: "An eighth-century shrine inside the fort — India's oldest three-eyed Ganesha.", img: SEED_IMAGES.attraction_temple },
   { name: "Kachida Valley", text: "Rocky outcrops where sloth bears, leopards and tigers all roam.", img: "https://images.unsplash.com/photo-1694366454450-7979697bab21?auto=format&fit=crop&w=900&q=80" },
   { name: "Raj Bagh Ruins", text: "Ivy-eaten domes half-submerged by jungle — the most photogenic frame on a morning safari.", img: "https://images.unsplash.com/photo-1673429451048-08db61259eac?auto=format&fit=crop&w=900&q=80" },
 ];
@@ -105,11 +106,11 @@ export const HOTELS = [
 ];
 
 export const PACKAGES = [
-  { name: "Weekend Tiger Trail", badge: "Most Popular", duration: "2 Nights · 3 Days", features: ["Two Gypsy safaris", "Daily breakfast", "Budget hotel", "Transfers"], price: 12999, original: 16500, img: "https://images.unsplash.com/photo-1589959116874-6216d692f81c?auto=format&fit=crop&w=900&q=80" },
+  { name: "Weekend Tiger Trail", badge: "Most Popular", duration: "2 Nights · 3 Days", features: ["Two Gypsy safaris", "Daily breakfast", "Budget hotel", "Transfers"], price: 12999, original: 16500, img: SEED_IMAGES.package_weekend_tiger_trail },
   { name: "Family Jungle Adventure", duration: "3 Nights · 4 Days", features: ["Four shared Gypsy safaris", "Kids activity kit", "Standard hotel with pool", "Fort tour"], price: 32500, original: 39000, img: "https://images.unsplash.com/photo-1672490305147-2e791a7fbe0b?auto=format&fit=crop&w=900&q=80" },
   { name: "Luxury Wildlife Retreat", badge: "Top-Rated", duration: "4 Nights · 5 Days", features: ["Four Gypsy safaris", "Luxury tented suite", "Expert naturalist", "All meals"], price: 119000, original: 145000, img: "https://images.unsplash.com/photo-1652885363231-b0cb27a13197?auto=format&fit=crop&w=900&q=80" },
   { name: "Budget Explorer", duration: "1 Night · 2 Days", features: ["One Canter safari", "Budget homestay", "Breakfast", "Local guide"], price: 3499, original: 4800, img: "https://images.unsplash.com/photo-1780283574760-e8d7fd944da5?auto=format&fit=crop&w=900&q=80" },
-  { name: "Photography Safari", badge: "Pro Choice", duration: "3 Nights · 4 Days", features: ["Four morning private Gypsy safaris", "Photography naturalist", "Beanbag support", "Boutique tented camp"], price: 78500, original: 92000, img: "https://images.pexels.com/photos/15345428/pexels-photo-15345428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=900" },
+  { name: "Photography Safari", badge: "Pro Choice", duration: "3 Nights · 4 Days", features: ["Four morning private Gypsy safaris", "Photography naturalist", "Beanbag support", "Boutique tented camp"], price: 78500, original: 92000, img: SEED_IMAGES.package_photography_safari },
 ];
 
 export const SAFARI_TIMINGS = [

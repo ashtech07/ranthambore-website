@@ -1,0 +1,1 @@
+- [Fixed-position elements clipped by ancestor backdrop-blur](fixed-position-backdrop-filter-containing-block.md) — a `fixed inset-0` overlay nested inside an element with `backdrop-blur`/`filter`/`transform` gets clipped to that ancestor's box, not the viewport.

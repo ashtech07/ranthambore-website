@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, NavLink } from "react-router-dom";
 import { MapPin, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSiteImage } from "@/lib/siteImages";
+import { SEED_IMAGES } from "@/lib/seedDefaults";
 
 const links = [
   { to: "/safari-booking", label: "Safari Booking" },
@@ -14,7 +16,7 @@ const links = [
 export default function Navbar({ transparentOnTop = true }) {
   const [scrolled, setScrolled] = useState(!transparentOnTop);
   const [open, setOpen] = useState(false);
-  const logo = useSiteImage("logo");
+  const logo = useSiteImage("logo", SEED_IMAGES.logo);
 
   useEffect(() => {
     if (!transparentOnTop) return;
@@ -23,6 +25,15 @@ export default function Navbar({ transparentOnTop = true }) {
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, [transparentOnTop]);
+
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
 
   return (
     <header
@@ -89,40 +100,44 @@ export default function Navbar({ transparentOnTop = true }) {
         </button>
       </div>
 
-      {/* Mobile drawer */}
-      {open && (
-        <div
-          data-testid="mobile-drawer"
-          className="fixed inset-0 z-50 bg-[#1A2B1F] text-white flex flex-col"
-        >
-          <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-            <span className="font-serif text-xl">Menu</span>
-            <button
-              data-testid="mobile-menu-close"
-              onClick={() => setOpen(false)}
-              aria-label="Close menu"
-              className="p-2"
-            >
-              <X className="w-6 h-6" />
-            </button>
-          </div>
-          <nav className="flex-1 flex flex-col px-6 py-8 gap-5 text-2xl font-serif">
-            <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-            {links.map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>
-                {l.label}
+      {/* Mobile drawer — rendered via portal to document.body so it isn't
+          clipped by the header's backdrop-blur, which creates a new
+          containing block for fixed-position descendants. */}
+      {open &&
+        createPortal(
+          <div
+            data-testid="mobile-drawer"
+            className="fixed inset-0 z-[100] bg-[#1A2B1F] text-white flex flex-col overflow-y-auto"
+          >
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+              <span className="font-serif text-xl">Menu</span>
+              <button
+                data-testid="mobile-menu-close"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="p-2"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <nav className="flex-1 flex flex-col px-6 py-8 gap-5 text-2xl font-serif">
+              <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+              {links.map((l) => (
+                <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>
+                  {l.label}
+                </Link>
+              ))}
+              <Link
+                to="/safari-booking"
+                onClick={() => setOpen(false)}
+                className="mt-4 inline-flex justify-center px-6 py-3 rounded-full bg-[#C8860A] text-white text-base"
+              >
+                Book Now
               </Link>
-            ))}
-            <Link
-              to="/safari-booking"
-              onClick={() => setOpen(false)}
-              className="mt-4 inline-flex justify-center px-6 py-3 rounded-full bg-[#C8860A] text-white text-base"
-            >
-              Book Now
-            </Link>
-          </nav>
-        </div>
-      )}
+            </nav>
+          </div>,
+          document.body
+        )}
     </header>
   );
 }

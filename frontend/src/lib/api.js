@@ -15,11 +15,11 @@ api.interceptors.request.use((cfg) => {
   return cfg;
 });
 
-export const WHATSAPP_NUMBER = "919999999999"; // placeholder
-export const WHATSAPP_DISPLAY = "+91 99999 99999";
-export const CALL_NUMBER = "+91 99999 99999";
-export const EMAIL_ADDRESS = "hello@ranthamborescurator.com";
-export const OFFICE_ADDRESS = "Sawai Madhopur, Rajasthan 322001";
+export const WHATSAPP_NUMBER = "917014404093";
+export const WHATSAPP_DISPLAY = "+91 70144 04093";
+export const CALL_NUMBER = "+91 70144 04093";
+export const EMAIL_ADDRESS = "theranthamborecurator@gmail.com";
+export const OFFICE_ADDRESS = "Flat No - 403, B Block, Riddhi Siddhi Appartment, Ranthambore, Sawai Madhopur, 322001";
 
 export const waLink = (text) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;

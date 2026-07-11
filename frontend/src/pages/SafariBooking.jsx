@@ -102,9 +102,13 @@ export default function SafariBooking() {
   // SUCCESS SCREEN
   if (success) {
     const ref = success.ref;
-    const waMsg = waLink(`Hi! Booking ${ref}. Name: ${success.full_name}. Date: ${success.date} ${success.shift}. Vehicle: ${success.vehicle}. Guests: ${success.guests}.`);
+    const waMsg = waLink(`Hi, I'd like to book a safari. My booking reference is ${ref}.`);
     return (
-      <PublicLayout title="Booking Received | Ranthambore Safari Curator" description="Your safari booking request has been received.">
+      <PublicLayout
+        title="Booking Received | Ranthambore Safari Curator"
+        description="Your safari booking request has been received."
+        transparentOnTop={false}
+      >
         <section className="min-h-[80vh] flex items-center justify-center px-6 py-24 bg-[#F9F5EE]">
           <div className="max-w-xl text-center bg-white rounded-3xl p-10 shadow-xl border border-stone-200">
             <div className="w-20 h-20 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-6">
