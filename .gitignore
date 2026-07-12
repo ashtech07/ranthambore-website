@@ -83,6 +83,8 @@ android-sdk/frontend/node_modules/.cache/default-development/0.pack
 frontend/node_modules/.cache/default-development/0.pack
 .env
 .env.*
+!.env.example
+!**/.env.example
 *.env
 credentials.json
 *.key
@@ -90,3 +92,6 @@ credentials.json
 
 # Local dev database (ephemeral, not for version control)
 .data/
+
+# Replit attached assets (scratch files uploaded during chat, not app code)
+attached_assets/

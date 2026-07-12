@@ -44,7 +44,7 @@ outputType = "console"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "mkdir -p /home/runner/workspace/.data/mongo && (mongod --dbpath /home/runner/workspace/.data/mongo --port 27017 --bind_ip 127.0.0.1 --logpath /home/runner/workspace/.data/mongo.log --fork || true) && sleep 1 && cd backend && uvicorn server:app --host 0.0.0.0 --port 8001 --reload"
+args = "mkdir -p /home/runner/workspace/.data/mongo && (mongod --dbpath /home/runner/workspace/.data/mongo --port 27017 --bind_ip 127.0.0.1 --logpath /home/runner/workspace/.data/mongo.log --fork || true) && sleep 1 && cd backend && PORT=8001 node server.js"
 waitForPort = 8001
 
 [[workflows.workflow]]

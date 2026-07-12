@@ -11,25 +11,35 @@ here).
 ## Stack
 - **Frontend**: React (Create React App via craco), Tailwind, shadcn/radix UI
   components, react-router — `frontend/`
-- **Backend**: FastAPI + Motor (async MongoDB driver) — `backend/server.py`
+- **Backend**: Node.js + Express + the native MongoDB driver — `backend/server.js`
+  (rewritten from the original FastAPI + Motor service on 2026-07-12; same
+  routes, same request/response shapes, no frontend changes needed)
 - **Database**: MongoDB (run locally in this dev environment; see below)
 
 ## Running locally
 Two workflows:
 - **Backend API** (console, port 8001): starts a local `mongod` (data dir
-  `.data/mongo`) if not already running, then `uvicorn server:app --reload`
-  from `backend/`.
+  `.data/mongo`) if not already running, then `node server.js` from `backend/`
+  (started with `PORT=8001` on the workflow's command line — see note below).
 - **Start application** (webview, port 5000): `yarn start` (craco) from
   `frontend/`. The frontend dev server proxies `/api/*` to `http://localhost:8001`
   via the `proxy` field in `frontend/package.json`; `REACT_APP_BACKEND_URL` is
   left empty so `axios` calls go through that proxy.
 
-Config (Mongo URL/DB name, CORS origins, admin PIN, frontend backend-URL/host
-settings) lives in **Replit env vars** (shared environment) rather than
-`.env` files, since this environment forbids writing `.env` files directly.
+Required backend env vars: `MONGO_URL`, `DB_NAME`, `ADMIN_PIN` (server refuses
+to start if any are missing — no hardcoded fallback PIN). Optional:
+`CORS_ORIGINS` (comma-separated allowlist, defaults to `*` in dev / restrictive
+in production), `PORT` (default 8001), `NODE_ENV`. See `backend/.env.example`
+and `backend/README.md` for the full list — on Replit these are already
+provided as shared env vars rather than a `.env` file.
 
-Admin panel PIN defaults to `73921846` (see `ADMIN_PIN` env var) — no real
-auth system, just a shared PIN header.
+**Note:** the shared `PORT` env var in this Replit environment is `5000`
+(claimed by the frontend), so the Backend API workflow explicitly runs with
+`PORT=8001` prefixed on its command to avoid a collision — don't remove that
+prefix or the backend will try to bind to the frontend's port.
+
+Admin panel PIN is `73921846` in this dev environment (see `ADMIN_PIN` env
+var) — no real auth system, just a shared PIN header (`X-Admin-Pin`).
 
 ## Contact channels
 - WhatsApp: +91 70144 04093 (used for the floating chat button, "Book via
